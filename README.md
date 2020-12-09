@@ -7,7 +7,7 @@ While I'm currently learning Japanese language as my third spoken language, I re
 It is essential to memorize characters, words, phrases and even common sentence at the very beginning of learning language. I might update new version for adding "categorize cards" in folders in the future.
 
 # Screen shots
-![This is the app look like after you've install it.](./ScreenShots/iconOniPhones.png)
+<img src="./ScreenShots/iconOniPhone.png" width="200" title="This is the app look like after you've install it" alt="app icon">
 
 ![Launch the flashCard app, there's a list of your personal learning cards!(Of course it's blank now LOL)](./ScreenShots/launch.png)
 
@@ -34,6 +34,9 @@ It is essential to memorize characters, words, phrases and even common sentence 
 - `CardViewController.swift` shows the front of the card selected. Users can tap the bottom button to view previous card, flip the current card or view the next one.
 - `EditCardView.swift` can edit the current selected card by swiping the cell slightly left at  `ViewController.swift` then tap on edit button. 
 - During implementing, I'm pleasing to know if I would like to change the back button title of the UIBarButtonItem, I have to implement in the parent view! Bescause the back destination is belong to the parent view! It's really interesting!
+
+# Issues
+Please feel free to shoot me a mail: `ac60822@gmail.com`, thanks!
 
 # Credits
 Thanks A LOT to CS50!
