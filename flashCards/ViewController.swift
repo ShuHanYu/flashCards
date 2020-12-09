@@ -63,8 +63,6 @@ class ViewController: UITableViewController {
             }
         }
         else if segue.identifier == "editSegue" {
-            print("editSegue")
-            print("\(String(describing: sender))")
             if let indexPath = sender as? IndexPath {
                 if let destination = segue.destination as? EditCardViewController {
                     destination.rowIndex = indexPath[1]

@@ -20,7 +20,6 @@ class EditCardViewController: UIViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("rowIndex = \(String(describing: rowIndex))")
         
         card = CardManager.main.getAllCards()[rowIndex]
         frontTextView.backgroundColor = frontBgColor

@@ -25,8 +25,6 @@ class CardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("row index = \(rowIndex)")
-        print("cards count = \(allCards.count)")
         // Default settings
         cardTextView.backgroundColor = frontBgColor
         cardTextView.text = card.frontContents
@@ -56,7 +54,7 @@ class CardViewController: UIViewController {
     }
     
     func btnEnabilityControl() {
-        if allCards.count > 1 {
+        if allCards.count > 0 {
             // Control accessibility of previous button
             if rowIndex != 0 {
                 previousBtn.isEnabled = true
