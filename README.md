@@ -8,7 +8,7 @@ It is essential to memorize characters, words, phrases and even common sentence 
 
 # Screen shots
 <img src="./ScreenShots/iconOniPhone.png" width="200">
-<img src="./ScreenShots/launch.png" width="200">
+<img src="./ScreenShots/lauch.png" width="200">
 <img src="./ScreenShots/createNew.png" width="200">
 <img src="./ScreenShots/swipeToActions.png" width="200">
 <img src="./ScreenShots/frontOfCard.png" width="200">
