@@ -7,6 +7,56 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Write Card View Controller-->
+        <scene sceneID="Ler-dF-LeF">
+            <objects>
+                <viewController id="2XY-RR-Xb6" customClass="WriteCardViewController" customModule="flashCards" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VbV-Lg-9ul">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FWY-3y-9bk">
+                                <rect key="frame" x="20" y="88" width="374" height="424"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Im7-pi-0rC">
+                                <rect key="frame" x="20" y="520" width="374" height="342"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="342" id="Dur-wR-TWu"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Im7-pi-0rC" firstAttribute="top" secondItem="FWY-3y-9bk" secondAttribute="bottom" constant="8" id="78e-Cs-Pz5"/>
+                            <constraint firstItem="Im7-pi-0rC" firstAttribute="trailing" secondItem="VbV-Lg-9ul" secondAttribute="trailingMargin" id="DZ5-My-djc"/>
+                            <constraint firstItem="Im7-pi-0rC" firstAttribute="leading" secondItem="VbV-Lg-9ul" secondAttribute="leadingMargin" id="EER-4G-VGW"/>
+                            <constraint firstItem="Im7-pi-0rC" firstAttribute="bottom" secondItem="gSD-Bv-4dn" secondAttribute="bottom" id="NPC-9Q-D4U"/>
+                            <constraint firstItem="FWY-3y-9bk" firstAttribute="top" secondItem="gSD-Bv-4dn" secondAttribute="top" id="TmL-C2-bhP"/>
+                            <constraint firstItem="FWY-3y-9bk" firstAttribute="leading" secondItem="Im7-pi-0rC" secondAttribute="leading" id="beH-hR-UAt"/>
+                            <constraint firstItem="FWY-3y-9bk" firstAttribute="trailing" secondItem="Im7-pi-0rC" secondAttribute="trailing" id="k3B-xB-zI8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gSD-Bv-4dn"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="DA4-t7-w5Q"/>
+                    <connections>
+                        <outlet property="backEditTextView" destination="Im7-pi-0rC" id="EVi-db-o24"/>
+                        <outlet property="frontEditTextView" destination="FWY-3y-9bk" id="GaV-3g-Xkd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NlQ-Pp-9RC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1150.7246376811595" y="-629.46428571428567"/>
+        </scene>
         <!--Cards-->
         <scene sceneID="ltj-6Z-Ftw">
             <objects>
@@ -33,7 +83,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="bIh-Gq-2DJ" kind="show" identifier="cardSegue" id="rg7-sJ-n1c"/>
+                                    <segue destination="bIh-Gq-2DJ" kind="show" identifier="cellSegue" id="HCR-7l-L7S"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -45,14 +95,17 @@
                     <navigationItem key="navigationItem" title="Cards" id="h9y-qS-F6S">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="1Yz-pI-t4Y">
                             <connections>
-                                <action selector="createCard" destination="nL8-jW-gs9" id="dyv-kE-r43"/>
+                                <segue destination="2XY-RR-Xb6" kind="show" identifier="addCardSegue" id="Njx-vm-vCb"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="Xvs-2U-Me8" kind="show" identifier="editSegue" id="6rI-Pw-Lha"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hvp-5Z-MLZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="382.60869565217394" y="38.839285714285715"/>
+            <point key="canvasLocation" x="297" y="39"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uPR-da-8kn">
@@ -72,26 +125,26 @@
             </objects>
             <point key="canvasLocation" x="-527.536231884058" y="38.839285714285715"/>
         </scene>
-        <!--Card View Controller-->
-        <scene sceneID="I5j-nO-kEp">
+        <!--Edit Card View Controller-->
+        <scene sceneID="8IK-E0-aDr">
             <objects>
-                <viewController id="bIh-Gq-2DJ" customClass="CardViewController" customModule="flashCards" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="y7c-7W-nOE">
+                <viewController id="Xvs-2U-Me8" customClass="EditCardViewController" customModule="flashCards" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="H89-JY-pdV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JgS-hc-MUV">
-                                <rect key="frame" x="20" y="88" width="374" height="356"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sJn-Sr-lMy">
+                                <rect key="frame" x="20" y="88" width="374" height="360"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="356" id="xFQ-Uc-pkQ"/>
+                                    <constraint firstAttribute="height" constant="360" id="0eq-hE-Grc"/>
                                 </constraints>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rWW-uL-t4G">
-                                <rect key="frame" x="20" y="452" width="374" height="410"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="r26-Rj-z1a">
+                                <rect key="frame" x="20" y="456" width="374" height="385"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -100,25 +153,117 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="rWW-uL-t4G" firstAttribute="trailing" secondItem="JgS-hc-MUV" secondAttribute="trailing" id="1iy-NB-OGR"/>
-                            <constraint firstItem="JgS-hc-MUV" firstAttribute="top" secondItem="rVp-x6-ba2" secondAttribute="top" id="467-Ck-gjs"/>
-                            <constraint firstItem="JgS-hc-MUV" firstAttribute="trailing" secondItem="y7c-7W-nOE" secondAttribute="trailingMargin" id="703-oP-ciM"/>
-                            <constraint firstItem="JgS-hc-MUV" firstAttribute="leading" secondItem="y7c-7W-nOE" secondAttribute="leadingMargin" id="8f6-ad-mTd"/>
-                            <constraint firstItem="rWW-uL-t4G" firstAttribute="bottom" secondItem="rVp-x6-ba2" secondAttribute="bottom" id="CQf-ey-VIH"/>
-                            <constraint firstItem="rWW-uL-t4G" firstAttribute="top" secondItem="JgS-hc-MUV" secondAttribute="bottom" constant="8" symbolic="YES" id="TVZ-Eq-l88"/>
-                            <constraint firstItem="rWW-uL-t4G" firstAttribute="leading" secondItem="JgS-hc-MUV" secondAttribute="leading" id="bwi-QM-XEY"/>
+                            <constraint firstItem="r26-Rj-z1a" firstAttribute="top" secondItem="sJn-Sr-lMy" secondAttribute="bottom" constant="8" id="00y-vq-hGP"/>
+                            <constraint firstItem="sJn-Sr-lMy" firstAttribute="top" secondItem="Rvu-rL-tzQ" secondAttribute="top" id="O0B-RO-rRa"/>
+                            <constraint firstItem="r26-Rj-z1a" firstAttribute="leading" secondItem="sJn-Sr-lMy" secondAttribute="leading" id="Zif-oW-zRx"/>
+                            <constraint firstItem="sJn-Sr-lMy" firstAttribute="leading" secondItem="H89-JY-pdV" secondAttribute="leadingMargin" id="eJT-NA-aaR"/>
+                            <constraint firstItem="sJn-Sr-lMy" firstAttribute="trailing" secondItem="H89-JY-pdV" secondAttribute="trailingMargin" id="eTF-se-piH"/>
+                            <constraint firstItem="r26-Rj-z1a" firstAttribute="trailing" secondItem="sJn-Sr-lMy" secondAttribute="trailing" id="sxz-bM-DUA"/>
+                            <constraint firstItem="Rvu-rL-tzQ" firstAttribute="bottom" secondItem="r26-Rj-z1a" secondAttribute="bottom" constant="21" id="yuA-PR-hne"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Rvu-rL-tzQ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="FcQ-JE-hhb">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="09b-3q-7ow">
+                            <connections>
+                                <action selector="save:" destination="Xvs-2U-Me8" id="3K9-il-TBS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="backTextView" destination="r26-Rj-z1a" id="FoA-fg-lUQ"/>
+                        <outlet property="frontTextView" destination="sJn-Sr-lMy" id="fIw-z3-uBQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xvA-rX-m1Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="295.6521739130435" y="823.66071428571422"/>
+        </scene>
+        <!--Card View Controller-->
+        <scene sceneID="I5j-nO-kEp">
+            <objects>
+                <viewController id="bIh-Gq-2DJ" customClass="CardViewController" customModule="flashCards" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="y7c-7W-nOE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zrn-ES-YGc">
+                                <rect key="frame" x="20" y="125" width="374" height="620"/>
+                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="620" id="nrC-Xr-KvF"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hm3-f7-5Ik">
+                                <rect key="frame" x="329" y="804" width="65" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="UOi-Im-TE9"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="arrow.right.circle.fill" catalog="system">
+                                    <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="toNext:" destination="bIh-Gq-2DJ" eventType="touchUpInside" id="fYV-4Z-si9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tfD-pf-Ema">
+                                <rect key="frame" x="20" y="797.5" width="65" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="Ph7-17-UGH"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="arrow.left.circle.fill" catalog="system">
+                                    <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="toPrevious:" destination="bIh-Gq-2DJ" eventType="touchUpInside" id="974-by-2Qy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nsK-Yu-YzU">
+                                <rect key="frame" x="175" y="803.5" width="65" height="58"/>
+                                <state key="normal" backgroundImage="repeat" catalog="system">
+                                    <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="flip:" destination="bIh-Gq-2DJ" eventType="touchUpInside" id="wk8-cV-Zh6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="zrn-ES-YGc" firstAttribute="top" secondItem="rVp-x6-ba2" secondAttribute="top" constant="37" id="9b8-h9-3iE"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="hm3-f7-5Ik" secondAttribute="bottom" constant="-0.5" id="AbA-fs-auY"/>
+                            <constraint firstItem="tfD-pf-Ema" firstAttribute="leading" secondItem="zrn-ES-YGc" secondAttribute="leading" id="IQn-QG-ONV"/>
+                            <constraint firstItem="hm3-f7-5Ik" firstAttribute="top" secondItem="zrn-ES-YGc" secondAttribute="bottom" constant="58.5" id="KWQ-3r-w3f"/>
+                            <constraint firstItem="nsK-Yu-YzU" firstAttribute="leading" secondItem="tfD-pf-Ema" secondAttribute="trailing" constant="90" id="Oor-tn-7u1"/>
+                            <constraint firstItem="nsK-Yu-YzU" firstAttribute="centerY" secondItem="hm3-f7-5Ik" secondAttribute="centerY" id="QH5-iG-Y8F"/>
+                            <constraint firstItem="zrn-ES-YGc" firstAttribute="leading" secondItem="y7c-7W-nOE" secondAttribute="leadingMargin" id="XOC-IH-W1O"/>
+                            <constraint firstItem="zrn-ES-YGc" firstAttribute="trailing" secondItem="y7c-7W-nOE" secondAttribute="trailingMargin" id="ZLi-lt-7ua"/>
+                            <constraint firstItem="tfD-pf-Ema" firstAttribute="top" secondItem="zrn-ES-YGc" secondAttribute="bottom" constant="52" id="aIO-xD-FQB"/>
+                            <constraint firstItem="hm3-f7-5Ik" firstAttribute="trailing" secondItem="zrn-ES-YGc" secondAttribute="trailing" id="hrD-D1-alb"/>
+                            <constraint firstItem="nsK-Yu-YzU" firstAttribute="top" secondItem="zrn-ES-YGc" secondAttribute="bottom" constant="57.5" id="mGI-Ny-bie"/>
+                            <constraint firstItem="nsK-Yu-YzU" firstAttribute="centerX" secondItem="zrn-ES-YGc" secondAttribute="centerX" id="tfs-xI-GLb"/>
+                            <constraint firstItem="tfD-pf-Ema" firstAttribute="bottom" secondItem="rVp-x6-ba2" secondAttribute="bottom" id="uxA-vG-xGJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rVp-x6-ba2"/>
                     </view>
                     <navigationItem key="navigationItem" id="O6E-XP-rnb"/>
                     <connections>
-                        <outlet property="backTextView" destination="rWW-uL-t4G" id="oTl-T2-c3U"/>
-                        <outlet property="frontTextView" destination="JgS-hc-MUV" id="B6I-8m-UX5"/>
+                        <outlet property="cardTextView" destination="zrn-ES-YGc" id="g6U-lb-wfW"/>
+                        <outlet property="nextBtn" destination="hm3-f7-5Ik" id="gOD-1x-7ka"/>
+                        <outlet property="previousBtn" destination="tfD-pf-Ema" id="pxq-pA-Eve"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xTP-Jg-dVy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1150.7246376811595" y="38.839285714285715"/>
+            <point key="canvasLocation" x="1403" y="39"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="arrow.left.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="arrow.right.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="repeat" catalog="system" width="64" height="48"/>
+    </resources>
 </document>

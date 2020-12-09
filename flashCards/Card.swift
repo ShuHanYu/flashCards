@@ -51,22 +51,29 @@ class CardManager {
     }
     
     // Creating cards
-    func create() -> Int {
+    func create(card: Card) {
         connect()
         
         // Prepare query: create a statement for sqlite to execute
         var statement: OpaquePointer!
-        if sqlite3_prepare_v2(database, "INSERT into cards (frontContents, backContents) VALUES ('FRONT', 'BACK')", -1, &statement, nil) != SQLITE_OK {
+        if sqlite3_prepare_v2(database, "INSERT into cards (frontContents, backContents) VALUES (?, ?)", -1, &statement, nil) != SQLITE_OK {
             print("could not create insert query")
-            return -1
         }
+        
+        // Bind data to query
+        sqlite3_bind_text(statement, 1, NSString(string: card.frontContents).utf8String, -1, nil)
+        sqlite3_bind_text(statement, 2, NSString(string: card.backContents).utf8String, -1, nil)
+        
         // Execute query
         if sqlite3_step(statement) != SQLITE_DONE {
             print("could not insert card")
-            return -1
         }
         // Finalize query
         sqlite3_finalize(statement)
+    }
+    
+    // Getting last rowid
+    func getLastRowId() -> Int {
         return Int(sqlite3_last_insert_rowid(database))
     }
     
@@ -87,7 +94,6 @@ class CardManager {
         }
         // Finalize query
         sqlite3_finalize(statement)
-        
         return result
     }
     
@@ -113,5 +119,28 @@ class CardManager {
         
         // Finalize statement to clean up
         sqlite3_finalize(statement)
+    }
+    
+    func delete(card: Card) -> Bool {
+        connect()
+        
+        // Prepare query
+        var statement: OpaquePointer!
+        if sqlite3_prepare_v2(database, "DELETE FROM cards WHERE rowid = ?", -1, &statement, nil) != SQLITE_OK {
+            print("Could not create delete query")
+            return false
+        }
+        
+        // Bind data to query
+        sqlite3_bind_int(statement, 1, Int32(card.id))
+        
+        // Execute query
+        if sqlite3_step(statement) != SQLITE_DONE {
+            print("Error deleting card")
+            return false
+        }
+        
+        sqlite3_finalize(statement)
+        return true
     }
 }
