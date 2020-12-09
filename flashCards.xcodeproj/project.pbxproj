@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		921C5A4F2580AE6F00DE22E9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 921C5A4E2580AE6F00DE22E9 /* README.md */; };
+		921C5A522580AF3000DE22E9 /* frontOfCard.png in Resources */ = {isa = PBXBuildFile; fileRef = 921C5A512580AF3000DE22E9 /* frontOfCard.png */; };
+		921C5A542580AF4200DE22E9 /* iconOniPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = 921C5A532580AF4200DE22E9 /* iconOniPhone.png */; };
+		921C5A562580AF4A00DE22E9 /* lauch.png in Resources */ = {isa = PBXBuildFile; fileRef = 921C5A552580AF4A00DE22E9 /* lauch.png */; };
+		921C5A582580AF5500DE22E9 /* backOfCard.png in Resources */ = {isa = PBXBuildFile; fileRef = 921C5A572580AF5500DE22E9 /* backOfCard.png */; };
+		921C5A5C2580AF6900DE22E9 /* createNew.png in Resources */ = {isa = PBXBuildFile; fileRef = 921C5A5B2580AF6900DE22E9 /* createNew.png */; };
+		921C5A5E2580AF8200DE22E9 /* swipeToActions.png in Resources */ = {isa = PBXBuildFile; fileRef = 921C5A5D2580AF8200DE22E9 /* swipeToActions.png */; };
 		92EE3627257DD89E001A1651 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EE3626257DD89E001A1651 /* AppDelegate.swift */; };
 		92EE3629257DD89E001A1651 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EE3628257DD89E001A1651 /* SceneDelegate.swift */; };
 		92EE362B257DD89E001A1651 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EE362A257DD89E001A1651 /* ViewController.swift */; };
@@ -20,6 +27,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		921C5A4E2580AE6F00DE22E9 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		921C5A512580AF3000DE22E9 /* frontOfCard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = frontOfCard.png; sourceTree = "<group>"; };
+		921C5A532580AF4200DE22E9 /* iconOniPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconOniPhone.png; sourceTree = "<group>"; };
+		921C5A552580AF4A00DE22E9 /* lauch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lauch.png; sourceTree = "<group>"; };
+		921C5A572580AF5500DE22E9 /* backOfCard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backOfCard.png; sourceTree = "<group>"; };
+		921C5A5B2580AF6900DE22E9 /* createNew.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = createNew.png; sourceTree = "<group>"; };
+		921C5A5D2580AF8200DE22E9 /* swipeToActions.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swipeToActions.png; sourceTree = "<group>"; };
 		92EE3623257DD89E001A1651 /* flashCards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flashCards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92EE3626257DD89E001A1651 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92EE3628257DD89E001A1651 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,9 +59,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		921C5A502580AEFB00DE22E9 /* ScreenShots */ = {
+			isa = PBXGroup;
+			children = (
+				921C5A5B2580AF6900DE22E9 /* createNew.png */,
+				921C5A572580AF5500DE22E9 /* backOfCard.png */,
+				921C5A5D2580AF8200DE22E9 /* swipeToActions.png */,
+				921C5A532580AF4200DE22E9 /* iconOniPhone.png */,
+				921C5A552580AF4A00DE22E9 /* lauch.png */,
+				921C5A512580AF3000DE22E9 /* frontOfCard.png */,
+			);
+			path = ScreenShots;
+			sourceTree = "<group>";
+		};
 		92EE361A257DD89E001A1651 = {
 			isa = PBXGroup;
 			children = (
+				921C5A4E2580AE6F00DE22E9 /* README.md */,
+				921C5A502580AEFB00DE22E9 /* ScreenShots */,
 				92EE3625257DD89E001A1651 /* flashCards */,
 				92EE3624257DD89E001A1651 /* Products */,
 			);
@@ -138,8 +167,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				92EE3633257DD8A1001A1651 /* LaunchScreen.storyboard in Resources */,
+				921C5A582580AF5500DE22E9 /* backOfCard.png in Resources */,
+				921C5A5C2580AF6900DE22E9 /* createNew.png in Resources */,
+				921C5A522580AF3000DE22E9 /* frontOfCard.png in Resources */,
+				921C5A542580AF4200DE22E9 /* iconOniPhone.png in Resources */,
 				92EE3630257DD8A1001A1651 /* Assets.xcassets in Resources */,
+				921C5A4F2580AE6F00DE22E9 /* README.md in Resources */,
+				921C5A5E2580AF8200DE22E9 /* swipeToActions.png in Resources */,
 				92EE362E257DD89E001A1651 /* Main.storyboard in Resources */,
+				921C5A562580AF4A00DE22E9 /* lauch.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
