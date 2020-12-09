@@ -7,17 +7,12 @@ While I'm currently learning Japanese language as my third spoken language, I re
 It is essential to memorize characters, words, phrases and even common sentence at the very beginning of learning language. I might update new version for adding "categorize cards" in folders in the future.
 
 # Screen shots
-<img src="./ScreenShots/iconOniPhone.png" width="200" title="This is the app look like after you've install it" alt="app icon">
-
-![Launch the flashCard app, there's a list of your personal learning cards!(Of course it's blank now LOL)](./ScreenShots/launch.png)
-
-![Create new card](./ScreenShots/createNew.png)
-
-![After creating new card, we can see all card's front information at the root page, to edit/delete, just swipe it](./ScreenShots/swipeToActions.png)
-
-![Default will show the front side of the card (as green color)](./ScreenShots/frontOfCard.png)
-
-![Press the flip button at the bottom-middle of screen to see the information on the back side of card](./ScreenShots/backOfCard.png)
+<img src="./ScreenShots/iconOniPhone.png" width="200">
+<img src="./ScreenShots/launch.png" width="200">
+<img src="./ScreenShots/createNew.png" width="200">
+<img src="./ScreenShots/swipeToActions.png" width="200">
+<img src="./ScreenShots/frontOfCard.png" width="200">
+<img src="./ScreenShots/backOfCard.png" width="200">
 
 # Features
 
